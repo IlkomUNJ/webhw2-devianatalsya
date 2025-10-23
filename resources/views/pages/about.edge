@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom - about</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    @include('partials/header')
+    
+  <section class="about" id="about">
+    <h1 class="heading"> <span> About </span> Us </h1>
+
+    <div class="row">
+      <!-- Video -->
+      <div class="video-container">
+        <video src="images/video.mp4" loop autoplay muted></video>
+        <h3>Blooms Made With Love</h3>
+      </div>
+
+      <div class="content">
+        <h1>Where Every Petal Speaks Love</h1>
+        <p>
+          We are dedicated to delivering the finest quality flowers for every occasion. 
+          Our commitment to excellence shines through in every detail—from carefully selected blooms 
+          to unique arrangements, fast delivery, and exceptional service. Choosing Bloom means choosing 
+          elegance, care, and beauty.
+        </p>
+        <a href="products.html" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  @include('partials/footer')
+
+
+</body>
+</html>

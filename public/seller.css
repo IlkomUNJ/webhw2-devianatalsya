@@ -1,0 +1,259 @@
+
+
+:root {
+  --serenity: #be5985;
+  --light-bg: #fff7fb;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 0.6rem;
+  --dark: #333;
+  --gray: #777;
+  --white: #fff;
+  --accent: rgba(190, 89, 133, 0.08);
+  --transition: all 0.25s ease;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark);
+  padding: 2rem 6%;
+  line-height: 1.5;
+  font-size: 14px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.dashboard {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 4%; 
+}
+
+.dashboard h1 {
+  text-align: center;
+  color: var(--serenity);
+  font-size: 2rem;
+  margin: 1rem 0 2rem 0; 
+  text-shadow: 0 1px 2px rgba(190, 89, 133, 0.15);
+}
+
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e57399;
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #be5985;
+}
+
+.logout-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.add-product {
+  background: var(--light-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.add-product h2 {
+  color: var(--serenity);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.add-product form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.add-product input {
+  flex: 1 1 16rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.add-product input:focus {
+  border-color: var(--serenity);
+  box-shadow: 0 0 0 2px rgba(190, 89, 133, 0.2);
+}
+
+.add-product button {
+  background: var(--serenity);
+  color: var(--white);
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-product button:hover {
+  background: #a74c73;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(190, 89, 133, 0.2);
+}
+
+
+#preview {
+  max-width: 120px;
+  max-height: 120px;
+  display: none;
+  margin-top: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+
+.product-list, .wishlist-section {
+  margin-bottom: 3rem;
+  overflow-x: auto; 
+}
+
+.product-list h2,
+.wishlist-section h2 {
+  font-size: 1.3rem;
+  color: var(--serenity);
+  margin-bottom: 0.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+th, td {
+  text-align: center;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+th {
+  background: var(--serenity);
+  color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--light-bg);
+}
+
+tbody tr:hover {
+  background-color: var(--accent);
+  transition: background 0.2s ease;
+}
+
+.product-list img,
+.wishlist-section img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(190, 89, 133, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.wishlist-section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.4rem;
+}
+
+.product-list img:hover,
+.wishlist-section img:hover {
+  transform: scale(1.04);
+}
+
+.wishlist-section p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-top: 1.5rem;
+  background: var(--light-bg);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  display: inline-block;
+}
+
+.delete-btn {
+  background: #be5985;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #b076a8;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 1.5rem;
+    font-size: 13px;
+  }
+
+  .add-product form {
+    flex-direction: column;
+  }
+
+  .product-list img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .wishlist-section img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard h1 {
+    font-size: 1.6rem;
+  }
+
+  table th, table td {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}

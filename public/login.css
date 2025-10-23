@@ -1,0 +1,139 @@
+:root {
+    --serenity: #BE5985;
+    --dark-text: #333;
+    --light-bg: #f5f5f5;
+    --white: #fff;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    --radius: 0.75rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    color: var(--dark-text);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Kotak utama */
+.login-wrapper {
+    background: var(--white);
+    padding: 4rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Judul */
+.login-wrapper h1 {
+    font-size: 3.2rem;
+    color: var(--serenity);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* Deskripsi kecil */
+.login-wrapper p {
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: .5rem;
+}
+
+/* ======= FORM LOGIN ADMIN ======= */
+
+form label {
+    display: block;
+    text-align: left;
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1.5px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.8rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: var(--serenity);
+    box-shadow: 0 0 6px rgba(190, 89, 133, 0.3);
+}
+
+/* Tombol utama */
+.btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #babfc4;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--serenity);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(133, 91, 124, 0.3);
+}
+
+/* Tombol buyer/seller di halaman awal */
+.role-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.role-buttons form {
+    flex: 1;
+    width: 100%;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .login-wrapper {
+        padding: 3rem 2rem;
+    }
+
+    .role-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

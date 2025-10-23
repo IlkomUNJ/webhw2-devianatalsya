@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom - Login</title>
+     <link rel="stylesheet" href="login.css"> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="login-wrapper"> 
+        <h1>Login</h1>
+
+        <div class="role-buttons"> 
+            <form method="POST" action="/login/buyer">
+                {{ csrfField() }}
+                <input type="hidden" name="role" value="buyer">
+                <button type="submit" class="btn btn-buyer">
+                    Buyer
+                </button>
+            </form>
+
+            <form method="POST" action="/login/admin">
+                {{ csrfField() }}
+                <input type="hidden" name="role" value="seller">
+                <button type="submit" class="btn btn-seller">
+                    Seller
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom - home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+   @include('partials/header')
+
+
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Blooms That Brighten Your Day</h3>
+      <span>Handpicked. Heartfelt. Hassle-Free.</span>
+      <p>
+        Discover the beauty of fresh, organic flowers designed to make every moment special. 
+        From elegant bouquets to charming mini arrangements, we offer exclusive deals and free delivery in select locations. 
+        Whether it’s for a gift, a celebration, or just to add a touch of nature to your home, our limited-time offer is here to delight you.
+      </p>
+      <a href="/product" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="icons-container">
+    <div class="icons">
+      <img src="images/free delivery.png" alt="Free Delivery">
+      <div class="info">
+        <h3>Free Delivery</h3>
+        <span>On All Orders</span>
+      </div>
+    </div>
+
+    <div class="icons">
+      <img src="images/return.png" alt="10 Days Returns">
+      <div class="info">
+        <h3>10 Days Returns</h3>
+        <span>Moneyback Guarantee</span>
+      </div>
+    </div>
+
+    <div class="icons">
+      <img src="images/icon-3.png" alt="Offers & Gifts">
+      <div class="info">
+        <h3>Offer & Gifts</h3>
+        <span>On All Orders</span>
+      </div>
+    </div>
+
+    <div class="icons">
+      <img src="images/icon-4.png" alt="Secure Payments">
+      <div class="info">
+        <h3>Secure Payments</h3>
+        <span>Protected By Paypal</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="review" id="review">
+    <h1 class="heading"> Customer's <span> Review </span> </h1>
+
+    <div class="box-container">
+      <!-- Review 1 -->
+      <div class="box">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>The bouquet was even more beautiful than I expected! It arrived right on time and made the surprise extra special. Thank you, Bloom!</p>
+        <div class="user">
+          <img src="images/jake.jpg" alt="Jake">
+          <div class="user-info">
+            <h3>Jake</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+
+      <div class="box">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>Fast delivery and the flowers were so fresh! The arrangement looked elegant, and it instantly brightened up my living room. Definitely recommended. Thanks, Bloom!</p>
+        <div class="user">
+          <img src="images/emmy.jpg" alt="Emmy">
+          <div class="user-info">
+            <h3>Emmy</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+
+
+      <div class="box">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>Excellent service from start to finish. The flowers were carefully wrapped, still fresh when they arrived, and my girlfriend absolutely loved them. Will order again from Bloom!</p>
+        <div class="user">
+          <img src="images/billy.jpg" alt="Billy">
+          <div class="user-info">
+            <h3>Billy</h3>
+            <span>Customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+    </div>
+  </section>
+
+  @include('partials/footer')
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom - products</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+  </style>
+</head>
+<body>
+
+  @include('partials/header')
+
+  <section class="products" id="product">
+    <h1 class="heading">Latest <span>Products</span></h1>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products...">
+    </div>
+
+    <div class="box_container" id="productContainer">
+      @each(product in products)
+        <div class="box" data-name="{{ product.name.toLowerCase() }}" data-price="{{ product.price }}" data-seller="{{ product.seller?.toLowerCase() }}">
+          <span class="discount">-{{ Math.floor(Math.random() * 20) + 5 }}%</span>
+          <div class="image">
+            <img src="{{ product.images[0] }}" alt="{{ product.name }}">
+            <div class="icons">
+              <form method="POST" action="/wishlist/add/{{ product.id }}">
+                {{ csrfField() }}
+                <button type="submit" class="fas fa-heart" aria-label="Add to Wishlist"></button>
+              </form>
+              <a href="#" class="box_btn">Add to Cart</a>
+              <a href="#" class="fas fa-share" aria-label="Share"></a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>{{ product.name }}</h3>
+            <div class="price">{{ product.price }}</div>
+          </div>
+        </div>
+      @endeach
+    </div>
+  </section>
+
+    <script>
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('#productContainer .box');
+
+    // Fitur search realtime
+    searchInput.addEventListener('input', () => {
+      const filter = searchInput.value.toLowerCase();
+
+      products.forEach(product => {
+        const name = product.dataset.name;
+        const seller = product.dataset.seller || '';
+        if (name.includes(filter) || seller.includes(filter)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  @include('partials/footer')
+
+</body>
+</html>

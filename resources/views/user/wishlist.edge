@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom - Wishlist</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  @include('partials/header')
+
+  <section class="products" id="product">
+    <h1 class="heading"> My <span> Wishlist </span> </h1>
+
+    @if(wishlist && wishlist.length)
+      <div class="box_container">
+        @each(item in wishlist)
+          <div class="box">
+            <div class="image">
+              <img src="{{ item.images }}" alt="{{ item.name }}">
+              <div class="icons">
+                <!-- Hapus dari wishlist -->
+                <form method="POST" action="/wishlist/remove/{{ item.id }}">
+                  {{ csrfField() }}
+                  <button type="submit" class="fas fa-trash" aria-label="Remove from Wishlist"></button>
+                </form>
+
+                <!-- Tambah ke cart -->
+                <form method="POST" action="/cart/add/{{ item.id }}">
+                  {{ csrfField() }}
+                  <button type="submit" class="box_btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="content">
+              <h3>{{ item.name }}</h3>
+              <div class="price">{{ item.price }}</div>
+            </div>
+          </div>
+        @endeach
+      </div>
+    @else
+      <p>You haven’t added any flowers yet </p>
+    @endif
+
+    <form method="POST" action="/wishlist/clear">
+      {{ csrfField() }}
+      <button class="clear-btn">Clear Wishlist</button>
+    </form>
+  </section>
+
+  @include('partials/footer')
+
+</body>
+</html>
